@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "codings",
+  "info": {
+    "singularName": "coding",
+    "pluralName": "codings",
+    "displayName": "Coding"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PostName": {
+      "type": "string",
+      "required": true
+    },
+    "PostContent": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "PostDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

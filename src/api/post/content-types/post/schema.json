@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PostName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "PostContent": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "Cattegory": {
+      "type": "enumeration",
+      "enum": [
+        "Hacking",
+        "Coding",
+        "Networking"
+      ],
+      "required": true
+    },
+    "PostDescription": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
